@@ -1,0 +1,3 @@
+With Mongo up run the following command line: 'mongo liftingAPI < dataJSON.js'.
+
+If all goes well, you should get an insert successful message.

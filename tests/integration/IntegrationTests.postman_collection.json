@@ -1,0 +1,261 @@
+{
+	"info": {
+		"_postman_id": "0671beaa-3358-4e17-bfed-c70a33443966",
+		"name": "IntegrationTests",
+		"description": "Integration tests for APITESTPROJECT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Tests",
+			"item": [
+				{
+					"name": "Current Database should have 6 values",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3bf52bd5-a495-4072-8b40-2a1ad2c0fc93",
+								"exec": [
+									"pm.test(\"Total starting values should equal 6\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.length).to.eql(6);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5050/api/lifts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"lifts"
+							]
+						},
+						"description": "Validate the get string with query parameter"
+					},
+					"response": []
+				},
+				{
+					"name": "Get a single item from api",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3bf52bd5-a495-4072-8b40-2a1ad2c0fc93",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5050/api/lifts/5f2ab977cb88bd30668df0dc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"lifts",
+								"5f2ab977cb88bd30668df0dc"
+							]
+						},
+						"description": "The api should return one object from the end point."
+					},
+					"response": []
+				},
+				{
+					"name": "Add an item in the end point",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "958cae18-612c-4af1-975d-ec76c49788a0",
+								"exec": [
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Upper Body 4\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"totalWeightLifted\": [\r\n        500\r\n    ],\r\n    \"workoutName\": \"Upper Body 4\",\r\n    \"description\": \"Shoulders and Arms workout\",\r\n    \"focus\": \"Shoulders\",\r\n    \"numExercises\": 5,\r\n    \"completed\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5050/api/lifts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"lifts"
+							]
+						},
+						"description": "Add a single item via the POST endpoint."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete the Added Item",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4d67941a-31d9-4019-aec5-ed289aa23eb4",
+								"exec": [
+									"pm.test(\"Repsonse containst Object Deleted string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Object deleted\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"totalWeightLifted\": [\r\n        500\r\n    ],\r\n    \"workoutName\": \"Upper Body 4\",\r\n    \"description\": \"Shoulders and Arms workout\",\r\n    \"focus\": \"Shoulders\",\r\n    \"numExercises\": 5,\r\n    \"completed\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5050/api/lifts/?name=Upper Body 4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"lifts",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Upper Body 4"
+								}
+							]
+						},
+						"description": "Deletes the last added item"
+					},
+					"response": []
+				},
+				{
+					"name": "Current Database should have 6 values Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0b6998b8-77a3-436c-9277-440d3eae4000",
+								"exec": [
+									"pm.test(\"Total starting values should equal 6\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.length).to.eql(6);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5050/api/lifts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"lifts"
+							]
+						},
+						"description": "Validate the get string with query parameter"
+					},
+					"response": []
+				},
+				{
+					"name": "HealthCheck Test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3bf52bd5-a495-4072-8b40-2a1ad2c0fc93",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5050/api/lifts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"lifts"
+							]
+						},
+						"description": "Validates that service is running."
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
