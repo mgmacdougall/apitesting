@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node start",
+    "start": "node index.js",
     "lint": "eslint .",
     "start-dev": "nodemon ./index.js",
     "contract-test": "node ./tests/integration/apiIntegration.js"
