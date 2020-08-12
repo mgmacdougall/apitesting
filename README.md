@@ -13,7 +13,7 @@ Example API integration testing application, for testing CRUD operations with Po
 1. Run npm install - to install all the dependencies
 2. Make sure an instance of Mongo DB is running, if not start up Mongo by running mongod from the command line.
 3. If this is a new installation, and no data exists, run the seed steps.
-   a. Navigate to the 'seedData' directory off the root of the project
+   a. Navigate to the 'seedData/mongoose' directory off the root of the project
    b. Run the following command `mongo liftingAPI < dataJSON.js`
    c. Launch the Mongo DB Client, or from the mongo shell, and check that there are 6 records in the collection.
 4. There are two options to run the server:
