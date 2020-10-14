@@ -30,12 +30,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5050/api/lifts",
+							"raw": "http://localhost:4040/api/lifts",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "5050",
+							"port": "4040",
 							"path": [
 								"api",
 								"lifts"
@@ -66,12 +66,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5050/api/lifts/5f2ab977cb88bd30668df0dc",
+							"raw": "http://localhost:4040/api/lifts/5f2ab977cb88bd30668df0dc",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "5050",
+							"port": "4040",
 							"path": [
 								"api",
 								"lifts",
@@ -115,12 +115,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5050/api/lifts",
+							"raw": "http://localhost:4040/api/lifts",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "5050",
+							"port": "4040",
 							"path": [
 								"api",
 								"lifts"
@@ -159,12 +159,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5050/api/lifts/?name=Upper Body 4",
+							"raw": "http://localhost:4040/api/lifts/?name=Upper Body 4",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "5050",
+							"port": "4040",
 							"path": [
 								"api",
 								"lifts",
@@ -202,12 +202,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5050/api/lifts",
+							"raw": "http://localhost:4040/api/lifts",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "5050",
+							"port": "4040",
 							"path": [
 								"api",
 								"lifts"
@@ -238,12 +238,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5050/api/lifts",
+							"raw": "http://localhost:4040/api/lifts",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "5050",
+							"port": "4040",
 							"path": [
 								"api",
 								"lifts"

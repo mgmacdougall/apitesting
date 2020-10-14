@@ -25,3 +25,12 @@ Example API integration testing application, for testing CRUD operations with Po
 There is one set of Post Man api tests that exist.
 To run these use the following commnd `npm run contract-tests`.
 The results will display in console. Any failures will be in red, green is pass.
+
+# Running Mongo Locally:
+
+Starting Mongodb locally:
+
+1. Navigate to "Program Files"\MongoDB\Server\bin
+2. Run the mongod
+   Verify at this time that there are log messages showing in the console.
+   Look for the one that says: `"msg":"Waiting for connections","attr":{"port":27017,"ssl":"off"}}`.
